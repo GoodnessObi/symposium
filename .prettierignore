@@ -1,0 +1,8 @@
+node_modules
+vendor
+public
+dist
+.env*
+.git
+package-lock.json
+composer.lock
