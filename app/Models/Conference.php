@@ -9,4 +9,6 @@ class Conference extends Model
 {
     /** @use HasFactory<\Database\Factories\ConferenceFactory> */
     use HasFactory;
+
+    protected $guarded = ['id'];
 }

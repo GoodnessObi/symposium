@@ -20,7 +20,7 @@ class TalkFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'title' => fake()->title,
+            'title' => fake()->sentence(),
             'type' => fake()->randomElement(TalkType::cases())->value,
             'length' => rand(15, 60),
             'abstract' => fake()->paragraph,
