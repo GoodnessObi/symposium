@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900">
                     <ul>
                         @foreach ($talks as $talk)
-                            <li class="mb-2 hover:bg-gray-100 p-2 rounded-md">  
+                            <li class="mb-2 hover:bg-gray-100 p-2 rounded-md">
                                 <a href="{{ route('talks.show', $talk) }}">
                                     {{ $talk->title }}
                                 </a>

@@ -42,7 +42,6 @@ class TalkController extends Controller
         // Create talk
         Auth::user()->talks()->create($validated);
 
-
         return redirect()->route('talks.index');
     }
 
