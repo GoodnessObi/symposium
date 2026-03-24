@@ -1,8 +1,16 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ $talk->title }}
-        </h2>
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <x-back-btn :route="route('talks.index')" />
+                <h2 class="text-xl font-semibold leading-tight text-gray-800">
+                    {{ $talk->title }}
+                </h2>
+            </div>
+            <a href="{{ route('talks.edit', ['talk' => $talk]) }}" class="bg-blue-500 text-white px-4 py-2 rounded-md">
+                Edit Talk
+            </a>
+        </div>
     </x-slot>
 
     <div class="py-12">

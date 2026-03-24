@@ -16,17 +16,17 @@
                 <div class="p-6 text-gray-900">
                     <ul>
                         @foreach ($talks as $talk)
-                            <li class="mb-2 hover:bg-gray-100 p-2 rounded-md flex justify-between items-center">
+                            <li class="mb-2 hover:bg-gray-100 p-2 rounded-md flex justify-between items-center group">
                                 <a href="{{ route('talks.show', $talk) }}">
                                     {{ $talk->title }}
                                 </a>
 
 
-                                <span class="flex items-center gap-2">
-                                        <a href="{{ route('talks.edit', ['talk' => $talk]) }}" class="text-gray-500 transition-colors duration-300 hover:text-primary-500">
-                                            Edit Talk
+                                <span class="flex items-center gap-2 hidden group-hover:flex">
+                                        <a href="{{ route('talks.edit', ['talk' => $talk]) }}" class="text-sm text-gray-500 transition-colors duration-300 hover:text-primary-500">
+                                            Edit
                                         </a>
-                                        <x-delete-item :route="route('talks.destroy', ['talk' => $talk])" :text="__('Delete this talk')" />
+                                        <x-delete-item :route="route('talks.destroy', ['talk' => $talk])" :text="__('Delete')" />
                                     </span>
                                 </li>
                             @endforeach

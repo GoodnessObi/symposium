@@ -1,9 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex items-center gap-4">
-        <a href="{{ route('talks.index') }}" class="text-gray-500 transition-colors duration-300 hover:text-primary-500">
-            &larr;
-        </a>
+        <x-back-btn :route="route('talks.index')" />
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{ __('Edit Talk') }}
         </h2>
