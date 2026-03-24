@@ -5,7 +5,7 @@
             &larr;
         </a>
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Create Talk') }}
+            {{ __('Edit Talk') }}
         </h2>
     </div>
     </x-slot>
@@ -14,7 +14,8 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                <form method="post" action="{{ route('talks.store') }}">
+                <form method="post" action="{{ route('talks.update', ['talk' => $talk]) }}">
+                    @method('patch')
                     @include('talks.template')
                 </form>
                 </div>
@@ -22,4 +23,3 @@
         </div>
     </div>
 </x-app-layout>
-ß

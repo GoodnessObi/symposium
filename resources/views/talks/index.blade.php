@@ -1,8 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('My Talks') }}
-        </h2>
+        <div class="flex justify-between items-center">
+            <h2 class="text-xl font-semibold leading-tight text-gray-800">
+                {{ __('My Talks') }}
+            </h2>
+            <a href="{{ route('talks.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md">
+                {{ __('Create Talk') }}
+            </a>
+        </div>
     </x-slot>
 
     <div class="py-12">
@@ -11,15 +16,22 @@
                 <div class="p-6 text-gray-900">
                     <ul>
                         @foreach ($talks as $talk)
-                            <li class="mb-2 hover:bg-gray-100 p-2 rounded-md">
+                            <li class="mb-2 hover:bg-gray-100 p-2 rounded-md flex justify-between items-center">
                                 <a href="{{ route('talks.show', $talk) }}">
                                     {{ $talk->title }}
                                 </a>
 
-                                <x-delete-item :route="route('talks.destroy', ['talk' => $talk])" :text="__('Delete this talk')" />
-                            </li>
-                        @endforeach
-                    </ul>
+
+                                <span class="flex items-center gap-2">
+                                        <a href="{{ route('talks.edit', ['talk' => $talk]) }}" class="text-gray-500 transition-colors duration-300 hover:text-primary-500">
+                                            Edit Talk
+                                        </a>
+                                        <x-delete-item :route="route('talks.destroy', ['talk' => $talk])" :text="__('Delete this talk')" />
+                                    </span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
