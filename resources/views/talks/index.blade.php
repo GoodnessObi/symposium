@@ -15,6 +15,8 @@
                                 <a href="{{ route('talks.show', $talk) }}">
                                     {{ $talk->title }}
                                 </a>
+
+                                <x-delete-item :route="route('talks.destroy', ['talk' => $talk])" :text="__('Delete this talk')" />
                             </li>
                         @endforeach
                     </ul>
