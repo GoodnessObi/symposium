@@ -26,7 +26,7 @@ class TalkController extends Controller
     public function create()
     {
         return view('talks.create', [
-            'talk' => new Talk(),
+            'talk' => new Talk,
         ]);
     }
 

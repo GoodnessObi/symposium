@@ -1,14 +1,14 @@
 <?php
 
-use App\Models\User;
 use App\Models\Talk;
+use App\Models\User;
 
 test('it lists talks on the talks index page', function () {
     $user = User::factory()
         ->has(Talk::factory()->count(2))
         ->create();
 
-    $otherUsersTalk = Talk::factory()->create();    
+    $otherUsersTalk = Talk::factory()->create();
 
     $response = $this
         ->actingAs($user)

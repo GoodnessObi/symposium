@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\User;
-use App\Models\Talk;
 use App\Enums\TalkType;
+use App\Models\Talk;
+use App\Models\User;
 
 test('a user can create a talk', function () {
     $user = User::factory()->create();
@@ -13,7 +13,6 @@ test('a user can create a talk', function () {
             'title' => $title = fake()->sentence(),
             'type' => TalkType::Keynote->value,
         ]);
-
 
     $response->assertRedirect(route('talks.index'));
 

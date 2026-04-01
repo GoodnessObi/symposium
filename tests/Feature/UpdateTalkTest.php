@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Talk;
 use App\Enums\TalkType;
+use App\Models\Talk;
 use App\Models\User;
 
 test('as user can update a talk', function () {
@@ -18,11 +18,9 @@ test('as user can update a talk', function () {
         ->assertSessionHasNoErrors()
         ->assertRedirect(route('talks.show', $talk));
 
-        $this->assertEquals('Updated Title', $talk->refresh()->title);
+    $this->assertEquals('Updated Title', $talk->refresh()->title);
 
 });
-
-
 
 test('users cannot update talks that are not theirs', function () {
     $talk = Talk::factory()->create();
