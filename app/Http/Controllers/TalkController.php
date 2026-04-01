@@ -79,7 +79,7 @@ class TalkController extends Controller
      */
     public function update(UpdateTalkRequest $request, Talk $talk)
     {
- 
+
         $talk->update($request->validated());
 
         return redirect()->route('talks.show', ['talk' => $talk]);
